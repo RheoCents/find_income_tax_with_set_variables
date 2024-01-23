@@ -3,10 +3,18 @@
 print('This is to know your income tax in thousand ex. 3000')
 user_income = float(input('How much is your income? '))
 computation_variable_need = (user_income-2000)
-if user_income >= 1000:
-    income_tax = ((int(user_income) - 2000)*2) + 1000
-    print('For an income of $',user_income, 'the income tax will be')
-    print(income_tax)
-if user_income < 1000:
-    print("the inputted amount don't quialify the tax rules")
-    print('For an amount of ', user_income, 'The tax will be $ 0')
+
+def zero_percent_rateb():
+    zero_percent_rate = user_income - 1000 
+
+for i in range (3):
+     if i == 1:
+         zero_percent_rate = (user_income-1000)
+     if i == 2:
+         one_percent_rate = (zero_percent_rate-1000)
+     if i == 3:
+         two_percent_rate  = (user_income-2000)
+         if two_percent_rate < 0:
+             two_percent_rate = 0
+income_tax = zero_percent_rate + one_percent_rate + two_percent_rate
+print(income_tax)
