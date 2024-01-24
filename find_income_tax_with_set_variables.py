@@ -7,10 +7,12 @@ print('Your income is', user_income, 'and your payable tax is')
 
 if user_income < 1000:
     income_tax = 0
-    print ('('+str(user_income), '* 0%) + (0 * 10%) + (0 * 2%) = $'+str(income_tax))
+    print('($'+str(user_income), '* 0%) + ($0.0 * 10%) + ($0.0 * 2%) = $'+str(income_tax))
 
 if user_income in range (1000, 2000):
     income_tax = (user_income-1000) * 1
-if user_income > 2000:
-    income_tax = [(user_income-2000)*2]+1000
+    print('($1000.0 * 0%) + ($'+str(income_tax),'* 10%) + ($0.0 * 2%) = $'+str(income_tax))
 
+if user_income > 2000:
+    income_tax = ((user_income-2000)*2)+1000
+    print('($1000.0 * 0%) + ($1000.0* 10%) + ($'+str(user_income-2000), '* 2%) = $'+str(income_tax))
